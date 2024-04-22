@@ -1,6 +1,7 @@
 import pickle
 import streamlit as st
 import pandas as pd
+import statsmodels
 
 st.title("Car Price prediction Using ML ")
 
