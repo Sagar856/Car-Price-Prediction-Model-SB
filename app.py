@@ -1,15 +1,14 @@
 import pickle
 import streamlit as st
-import numpy as np 
 import pandas as pd
 
 st.title("Car Price prediction Using ML ")
 
 # Loading pickle files
-statsmodels = ''
 final_model = pickle.load(open('webfiles/final_model.pkl', 'rb'))
 df = pickle.load(open('webfiles/df.pkl', 'rb'))
 
+print(final_model)
 
 # Getting Input from users
 # Age Input
