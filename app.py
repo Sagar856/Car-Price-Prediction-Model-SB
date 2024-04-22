@@ -11,7 +11,6 @@ final_model = pickle.load(open('webfiles/final_model.pkl', 'rb'))
 df = pickle.load(open('webfiles/df.pkl', 'rb'))
 
 
-
 # Getting Input from users
 # Age Input
 age = st.number_input(
