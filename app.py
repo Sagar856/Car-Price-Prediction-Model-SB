@@ -5,11 +5,12 @@ import pandas as pd
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
-st.title("Car Price prediction Using ML ")
+st.title("Car Price prediction Using ML ")  
 
 # Loading pickle files
-final_model = pickle.load(open('webfiles/final_model.pkl', 'rb'))
+# final_model = pickle.load(open('webfiles/final_model.pkl', 'rb'))
 df = pickle.load(open('webfiles/df.pkl', 'rb'))
+final_model = smf.ols('Price~Age+KM+HP+Cylinders+Doors+Weight+Gears', data = df).fit()
 
 print(final_model)
 
