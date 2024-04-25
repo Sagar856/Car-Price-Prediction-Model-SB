@@ -2,17 +2,12 @@ import pickle
 import streamlit as st
 import pandas as pd
 import statsmodels
-# import statsmodels.api as sm
-import statsmodels.formula.api as smf
 
 st.title("Car Price prediction Using ML ")  
 
 # Loading pickle files
 final_model = pickle.load(open('webfiles/final_model.pkl', 'rb'))
 df = pickle.load(open('webfiles/df.pkl', 'rb'))
-# final_model = smf.ols('Price~Age+KM+HP+Cylinders+Doors+Weight+Gears', data = df).fit()
-
-# print(final_model)
 
 # Getting Input from users
 # Age Input
@@ -63,3 +58,6 @@ if st.button('Check Price'):
     data = predict_price(final_model,age,km,hp,cylinders,doors,weight,gears)
     st.text('Your Car Price is:')
     st.text(round(data,2))
+
+st.divider()
+st.page_link("https://github.com/Sagar856/Car-Price-Prediction-Model-SB.git",label = 'Click here -- Git-hub source code')
